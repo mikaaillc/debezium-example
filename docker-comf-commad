@@ -1,9 +1,10 @@
 docker exec -it containerkey bash
 
-psql -h localhost -p 5432 -U appuser
+psql -h localhost -p 5432 -U appuser ## database consoldan oluşturmak için
 
 
 docker exec -it d0d4a64357c0 bash
 
-kafka-topics --zookeeper zookeeper:2181 --list
+kafka-topics --list --bootstrap-server localhost:9092
 
+kafka-console-consumer --bootstrap-server kafka:9092 --from-beginning --topic fulfillment.public.transaction --property print.key=true --property key.separator="-"
