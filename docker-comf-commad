@@ -7,4 +7,8 @@ docker exec -it d0d4a64357c0 bash
 
 kafka-topics --list --bootstrap-server localhost:9092
 
-kafka-console-consumer --bootstrap-server kafka:9092 --from-beginning --topic fulfillment.public.transaction --property print.key=true --property key.separator="-"
+## Message dosya ya kayıt edilir
+kafka-console-consumer --bootstrap-server kafka:9092 --from-beginning --topic fulfillment.public.transaction --property print.key=true --property key.separator="-" > output.json
+
+## local e dosyatı taşıma için 
+docker cp 4f982c89dacf:/home/appuser/output.json C:/Users/SEFA-/OneDrive/Masaüstü/debezium-example-main/
