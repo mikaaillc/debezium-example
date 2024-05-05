@@ -1,0 +1,19 @@
+{
+    "name":"payment-connector",
+    "config":{
+       "connector.class":"io.debezium.connector.postgresql.PostgresConnector",
+       "tasks.max":"1",
+       "database.hostname":"postgres",
+       "debezium.sink.kafka.topic.creation.enable" : true,
+       "database.port":"5432",
+       "database.user":"appuser",
+       "database.password":"qwerty",
+       "database.dbname":"payment",
+       "database.server.name":"dbserver1",
+       "database.whitelist": "payment",
+       "database.history.kafka.bootstrap.servers": "kafka:9092",
+       "database.history.kafka.topic": "schema-changes.payment",
+       "topic.prefix": "fulfillment"
+    }
+ }
+

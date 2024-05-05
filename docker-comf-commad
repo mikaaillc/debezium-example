@@ -1,0 +1,9 @@
+docker exec -it containerkey bash
+
+psql -h localhost -p 5432 -U appuser
+
+
+docker exec -it d0d4a64357c0 bash
+
+kafka-topics --zookeeper zookeeper:2181 --list
+
